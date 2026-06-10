@@ -4,6 +4,8 @@ import Dashboard from "./components/Dashboard";
 import Calculator from "./apps/Calculator/CalculatorApp";
 import ExpenseCalculatorApp from "./apps/expense/ExpensePage";
 import HabitPage from "./apps/HabitTracker/HabitPage";
+import URLShortenerPage from "./apps/UrlShortner/UrlShortenerPage";
+import InvoicePage from "./apps/InvoiceGenerator/InvoicePage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
@@ -18,6 +20,8 @@ function App(){
     openCalculator={() => setPage("calculator")}
     openExpense={()=>setPage("expense")}
     openHabit={()=>setPage("habit")}
+    openUrl={() => setPage("urlShortener")}
+    openInvoice={() => setPage("invoice")}
      />
 
   }
@@ -33,6 +37,12 @@ function App(){
 }
 {
   page==='habit'&&<HabitPage goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='urlShortener'&&<URLShortenerPage goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='invoice'&&<InvoicePage goBack={()=>setPage("dashboard")}/>
 }
     <ToastContainer
         position="top-right"

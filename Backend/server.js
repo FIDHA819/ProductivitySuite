@@ -1,12 +1,18 @@
-const express = require("express");
-const cors = require("cors");
-const mongoose = require("mongoose");
-const habitRoutes = require("./routes/HabitRoutes");
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+import habitRoutes from "./Routes/HabitRoutes.js";
+import expenseRoutes from "./Routes/expenserouter.js";
+import urlRoutes from "./Routes/UrlRoutes.js";
+import invoiceRoutes from "./Routes/InvoiceRoutes.js";
+
+dotenv.config();
 
 
-require("dotenv").config();
 
-const expenseRoutes = require("./Routes/expenserouter");
+
 
 const app = express();
 const PORT = 5000;
@@ -20,11 +26,13 @@ mongoose
   .catch((error) => console.log(error));
 
 app.use("/api/expenses", expenseRoutes);
+app.use("/api/invoices", invoiceRoutes);
 
 app.get("/", (req, res) => {
   res.send("Server running");
 });
 app.use("/api/habits",habitRoutes);
+app.use("/api/url", urlRoutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

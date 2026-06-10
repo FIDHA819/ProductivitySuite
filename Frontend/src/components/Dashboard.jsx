@@ -1,6 +1,6 @@
-import { CheckSquare, Calculator, Wallet, Target, LayoutGrid } from "lucide-react";
+import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2 ,BookDown} from "lucide-react";
 
-function Dashboard({ openTodo, openCalculator, openExpense, openHabit }) {
+function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, openInvoice }) {
   const apps = [
     {
       name: "Todo App",
@@ -23,7 +23,7 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit }) {
       desc: "Audit financial streams",
       icon: <Wallet size={28} className="text-emerald-400" />,
       action: openExpense,
-      accent: "hover:border-emerald-500/50 hover:shadow-emerald-950/20",
+      accent: "hover:border-emerald-400/50 hover:shadow-emerald-950/20",
       bgGlow: "from-emerald-600/20 to-transparent",
     },
     {
@@ -33,6 +33,22 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit }) {
       action: openHabit,
       accent: "hover:border-amber-500/50 hover:shadow-amber-950/20",
       bgGlow: "from-amber-600/20 to-transparent",
+    },
+    {
+      name: "URL Shortener",
+      desc: "Condense and redirect routing paths",
+      icon: <Link2 size={28} className="text-cyan-400" />,
+      action: openUrl,
+      accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
+      bgGlow: "from-cyan-600/20 to-transparent",
+    },
+      {
+      name: "Invoice Generator",
+      desc: "Create and manage professional invoices",
+      icon: <BookDown size={28} className="text-cyan-400" />,
+      action: openInvoice,
+      accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
+      bgGlow: "from-cyan-600/20 to-transparent",
     },
   ];
 
