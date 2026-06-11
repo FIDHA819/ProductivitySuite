@@ -1,6 +1,6 @@
-import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2 ,BookDown,QrCode} from "lucide-react";
+import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2 ,BookDown,QrCode,Clock} from "lucide-react";
 
-function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, openInvoice, openQRCodeGenerator }) {
+function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, openInvoice, openQRCodeGenerator, openPromodoroTimer }) {
   const apps = [
     {
       name: "Todo App",
@@ -57,6 +57,14 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, 
       action: openQRCodeGenerator,
       accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
       bgGlow: "from-cyan-600/20 to-transparent",
+    },
+     {
+      name: "Promodoro Timer",
+      desc: "Manage time intervals for focused work sessions",
+      icon: <Clock size={28} className="text-rose-400" />,
+      action: openPromodoroTimer,
+      accent: "hover:border-rose-500/50 hover:shadow-rose-950/20",
+      bgGlow: "from-rose-600/20 to-transparent",
     },
   ];
 

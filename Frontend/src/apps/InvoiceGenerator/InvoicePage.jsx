@@ -8,7 +8,7 @@ import {
 import InvoiceForm from "./InvoiceForm";
 import InvoiceList from "./InvoiceList";
 
-function InvoicePage() {
+function InvoicePage({goBack}) {
   const [view, setView] = useState("create"); // "create" | "history"
   const [invoices, setInvoices] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -93,6 +93,12 @@ setInvoices(res.data);
             <p className="text-slate-400 text-sm mt-1">
               Generate billing protocols and audit outgoing fiscal metrics.
             </p>
+              <button
+            onClick={goBack}
+            className="absolute top-6 left-6 text-sm font-medium text-slate-400 hover:text-slate-200 transition"
+          >
+            ← Back
+          </button>
           </div>
 
           {/* Navigation Controls */}

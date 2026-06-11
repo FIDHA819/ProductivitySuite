@@ -7,6 +7,7 @@ import HabitPage from "./apps/HabitTracker/HabitPage";
 import URLShortenerPage from "./apps/UrlShortner/UrlShortenerPage";
 import InvoicePage from "./apps/InvoiceGenerator/InvoicePage";
 import QRCodeGenerator from "./apps/QRGenerator/QRGeneratorPage";
+import PromodoroTimer from "./apps/Promodoro/PromodoroPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
@@ -24,6 +25,7 @@ function App(){
     openUrl={() => setPage("urlShortener")}
     openInvoice={() => setPage("invoice")}
     openQRCodeGenerator={() => setPage("qrCodeGenerator")}
+    openPromodoroTimer={() => setPage("promodoroTimer")}
      />
 
   }
@@ -48,6 +50,9 @@ function App(){
 }
 {
   page==='qrCodeGenerator'&&<QRCodeGenerator goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='promodoroTimer'&&<PromodoroTimer goBack={()=>setPage("dashboard")}/>
 }
     <ToastContainer
         position="top-right"

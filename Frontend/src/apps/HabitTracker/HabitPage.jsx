@@ -63,6 +63,12 @@ const HabitPage = ({goBack}) => {
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
               Habit Studio
             </h1>
+              <button
+            onClick={goBack}
+            className="absolute top-20 left-(-20) text-sm font-medium text-slate-400 hover:text-slate-200 transition"
+          >
+            ← Back
+          </button>
           </div>
 
           {/* Mini Stats Banner */}
@@ -123,7 +129,7 @@ const HabitPage = ({goBack}) => {
           </div>
         </div>
       </div>
-      <button onClick={goBack}>Back</button>
+   
     </div>
   );
 };
