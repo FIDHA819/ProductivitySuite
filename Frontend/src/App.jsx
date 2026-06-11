@@ -6,6 +6,7 @@ import ExpenseCalculatorApp from "./apps/expense/ExpensePage";
 import HabitPage from "./apps/HabitTracker/HabitPage";
 import URLShortenerPage from "./apps/UrlShortner/UrlShortenerPage";
 import InvoicePage from "./apps/InvoiceGenerator/InvoicePage";
+import QRCodeGenerator from "./apps/QRGenerator/QRGeneratorPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
@@ -22,6 +23,7 @@ function App(){
     openHabit={()=>setPage("habit")}
     openUrl={() => setPage("urlShortener")}
     openInvoice={() => setPage("invoice")}
+    openQRCodeGenerator={() => setPage("qrCodeGenerator")}
      />
 
   }
@@ -43,6 +45,9 @@ function App(){
 }
 {
   page==='invoice'&&<InvoicePage goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='qrCodeGenerator'&&<QRCodeGenerator goBack={()=>setPage("dashboard")}/>
 }
     <ToastContainer
         position="top-right"

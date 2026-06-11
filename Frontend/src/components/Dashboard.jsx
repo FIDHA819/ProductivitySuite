@@ -1,6 +1,6 @@
-import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2 ,BookDown} from "lucide-react";
+import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2 ,BookDown,QrCode} from "lucide-react";
 
-function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, openInvoice }) {
+function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, openInvoice, openQRCodeGenerator }) {
   const apps = [
     {
       name: "Todo App",
@@ -47,6 +47,14 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, 
       desc: "Create and manage professional invoices",
       icon: <BookDown size={28} className="text-cyan-400" />,
       action: openInvoice,
+      accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
+      bgGlow: "from-cyan-600/20 to-transparent",
+    },
+      {
+      name: "QR Code Generator",
+      desc: "Create and manage QR codes for URLs and data",
+      icon: <QrCode size={28} className="text-cyan-400" />,
+      action: openQRCodeGenerator,
       accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
       bgGlow: "from-cyan-600/20 to-transparent",
     },
