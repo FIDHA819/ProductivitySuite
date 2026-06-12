@@ -1,6 +1,16 @@
-import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2 ,BookDown,QrCode,Clock} from "lucide-react";
+import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2, BookDown, QrCode, Clock, Contact2 } from "lucide-react";
 
-function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, openInvoice, openQRCodeGenerator, openPromodoroTimer }) {
+function Dashboard({ 
+  openTodo, 
+  openCalculator, 
+  openExpense, 
+  openHabit, 
+  openUrl, 
+  openInvoice, 
+  openQRCodeGenerator, 
+  openPromodoroTimer,
+  openContact // Added Callback
+}) {
   const apps = [
     {
       name: "Todo App",
@@ -42,7 +52,7 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, 
       accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
       bgGlow: "from-cyan-600/20 to-transparent",
     },
-      {
+    {
       name: "Invoice Generator",
       desc: "Create and manage professional invoices",
       icon: <BookDown size={28} className="text-cyan-400" />,
@@ -50,7 +60,7 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, 
       accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
       bgGlow: "from-cyan-600/20 to-transparent",
     },
-      {
+    {
       name: "QR Code Generator",
       desc: "Create and manage QR codes for URLs and data",
       icon: <QrCode size={28} className="text-cyan-400" />,
@@ -58,13 +68,21 @@ function Dashboard({ openTodo, openCalculator, openExpense, openHabit, openUrl, 
       accent: "hover:border-cyan-500/50 hover:shadow-cyan-950/20",
       bgGlow: "from-cyan-600/20 to-transparent",
     },
-     {
+    {
       name: "Promodoro Timer",
       desc: "Manage time intervals for focused work sessions",
       icon: <Clock size={28} className="text-rose-400" />,
       action: openPromodoroTimer,
       accent: "hover:border-rose-500/50 hover:shadow-rose-950/20",
       bgGlow: "from-rose-600/20 to-transparent",
+    },
+    {
+      name: "Contact Manager", // Newly injected item
+      desc: "Audit and organize network personnel profiles",
+      icon: <Contact2 size={28} className="text-blue-400" />,
+      action: openContact,
+      accent: "hover:border-blue-500/50 hover:shadow-blue-950/20",
+      bgGlow: "from-blue-600/20 to-transparent",
     },
   ];
 
