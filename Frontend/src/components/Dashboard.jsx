@@ -1,4 +1,4 @@
-import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2, BookDown, QrCode, Clock, Contact2 } from "lucide-react";
+import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2, BookDown, QrCode, Clock, Contact2 ,Calendar,BookOpen} from "lucide-react";
 
 function Dashboard({ 
   openTodo, 
@@ -9,7 +9,9 @@ function Dashboard({
   openInvoice, 
   openQRCodeGenerator, 
   openPromodoroTimer,
-  openContact // Added Callback
+  openContact, // Added Callback
+  openAgeCalculator, // Added Callback
+  openStudentResult // Added Callback
 }) {
   const apps = [
     {
@@ -71,7 +73,7 @@ function Dashboard({
     {
       name: "Promodoro Timer",
       desc: "Manage time intervals for focused work sessions",
-      icon: <Clock size={28} className="text-rose-400" />,
+      icon: <Calendar size={28} className="text-rose-400" />,
       action: openPromodoroTimer,
       accent: "hover:border-rose-500/50 hover:shadow-rose-950/20",
       bgGlow: "from-rose-600/20 to-transparent",
@@ -83,6 +85,22 @@ function Dashboard({
       action: openContact,
       accent: "hover:border-blue-500/50 hover:shadow-blue-950/20",
       bgGlow: "from-blue-600/20 to-transparent",
+    },
+     {
+      name: "Age Calculator", // Newly injected item
+      desc: "Calculate age based on birth date",
+      icon: <Calendar size={28} className="text-green-400" />,
+      action: openAgeCalculator,
+      accent: "hover:border-green-500/50 hover:shadow-green-950/20",
+      bgGlow: "from-green-600/20 to-transparent",
+    },
+    {
+      name: "Student Result", // Newly injected item
+      desc: "Manage and view student academic performance",
+      icon: <BookOpen size={28} className="text-amber-400" />,
+      action: openStudentResult,
+      accent: "hover:border-amber-500/50 hover:shadow-amber-950/20",
+      bgGlow: "from-amber-600/20 to-transparent",
     },
   ];
 

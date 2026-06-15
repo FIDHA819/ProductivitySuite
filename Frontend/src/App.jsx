@@ -9,6 +9,8 @@ import InvoicePage from "./apps/InvoiceGenerator/InvoicePage";
 import QRCodeGenerator from "./apps/QRGenerator/QRGeneratorPage";
 import PromodoroTimer from "./apps/Promodoro/PromodoroPage";
 import ContactManager from "./apps/ContactManager/ContactPage";
+import AgeCalculator from "./apps/AgeCalculator/AgeCalculatorPage";
+import StudentResultPage from "./apps/StudentResult/StudentResultPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
@@ -27,7 +29,9 @@ function App(){
     openInvoice={() => setPage("invoice")}
     openQRCodeGenerator={() => setPage("qrCodeGenerator")}
     openPromodoroTimer={() => setPage("promodoroTimer")}
-    openContact={() => setPage("contactManager")} // Added Callback
+    openContact={() => setPage("contactManager")} 
+    openAgeCalculator={() => setPage("ageCalculator")}
+    openStudentResult={() => setPage("studentResult")}
      />
 
   }
@@ -58,6 +62,12 @@ function App(){
 }
 {
   page==='contactManager'&&<ContactManager goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='ageCalculator'&&<AgeCalculator goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='studentResult'&&<StudentResultPage goBack={()=>setPage("dashboard")}/>
 }
     <ToastContainer
         position="top-right"
