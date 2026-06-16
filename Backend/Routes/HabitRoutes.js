@@ -1,23 +1,23 @@
-const express = require("express");
+import express from "express";
 
-const router = express.Router();
-
-const {
+import {
   createHabit,
   getHabits,
   deleteHabit,
   updateHabit,
-  completeHabit
-} = require("../controllers/habitController");
+  completeHabit,
+} from "../Controllers/HabitController.js";
 
-router.get("/",getHabits);
+const router = express.Router();
 
-router.post("/",createHabit);
+router.get("/", getHabits);
 
-router.put("/:id",updateHabit);
+router.post("/", createHabit);
 
-router.delete("/:id",deleteHabit);
+router.put("/:id", updateHabit);
 
-router.patch("/:id/complete",completeHabit);
+router.delete("/:id", deleteHabit);
 
-module.exports = router;
+router.patch("/:id/complete", completeHabit);
+
+export default router;
