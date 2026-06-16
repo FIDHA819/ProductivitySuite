@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import SummaryCard from "../../components/expense/SummaryCard";
-import ExpenseForm from "../../components/expense/ExpenseForm";
+import ExpenseForm from "../../components/expense/Expenseform";
 import FilterBar from "../../components/expense/FilterBar";
 import ExpenseList from "../../components/expense/ExpenseList";
 import { API_URL } from "../../config/api";
