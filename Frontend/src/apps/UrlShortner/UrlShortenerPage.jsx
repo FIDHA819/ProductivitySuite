@@ -5,6 +5,7 @@ import {
   getUrls,
 } from "../../services/urlService";
 import "../../styles/UrlShortener.css"
+import { API_URL } from "../../config/api";
 
 function UrlShortenerPage({ goBack }) {
   const [originalUrl, setOriginalUrl] = useState("");
@@ -115,7 +116,7 @@ function UrlShortenerPage({ goBack }) {
                     <span className="url-label">Shortened Code</span>
                     <div className="short-link-row">
                       <a
-                        href={`http://localhost:5000/api/url/${url.shortCode}`}
+                        href={`${API_URL}/api/url/${url.shortCode}`}
                         target="_blank"
                         rel="noreferrer"
                         className="short-url-anchor"

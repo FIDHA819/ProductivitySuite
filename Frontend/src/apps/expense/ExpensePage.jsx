@@ -5,6 +5,7 @@ import SummaryCard from "../../components/expense/SummaryCard";
 import ExpenseForm from "../../components/expense/ExpenseForm";
 import FilterBar from "../../components/expense/FilterBar";
 import ExpenseList from "../../components/expense/ExpenseList";
+import { API_URL } from "../../config/api";
 
 function ExpensePage({goBack}) {
   const [expenses, setExpenses] = useState([]);
@@ -12,7 +13,7 @@ function ExpensePage({goBack}) {
   const fetchExpenses = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/expenses"
+        `${API_URL}/api/expenses`
       );
 
       setExpenses(response.data.data);

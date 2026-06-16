@@ -1,4 +1,5 @@
 import axios from "axios"
+import { API_URL } from "../../config/api";
 
 const smallEditButton = {
   background: "#e0f2fe",
@@ -22,7 +23,7 @@ function ExpenseItem({ expense }) {
    const handleDelete = async () => {
   try {
     await axios.delete(
-      `http://localhost:5000/api/expenses/${expense._id}`
+      `${API_URL}/api/expenses/${expense._id}`
     );
 
     window.location.reload();

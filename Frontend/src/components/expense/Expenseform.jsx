@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios"
 import { toast } from "react-toastify";
+import {API_URL} from "../../config/api"
 
 const labelStyle = {
   display: "block",
@@ -51,7 +52,7 @@ function ExpenseForm() {
     const handleSubmit = async () => {
   try {
     await axios.post(
-      "http://localhost:5000/api/expenses",
+      `${API_URL}/api/expenses`,
       {
         title,
         amount,

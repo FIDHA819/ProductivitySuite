@@ -1,7 +1,8 @@
 import axios from "axios";
+import { API_URL } from "../config/api";
 
 const API =
-  "http://localhost:5000/api/contacts";
+  `${API_URL}/api/contacts`;
 
 export const getContacts = () =>
   axios.get(API);
