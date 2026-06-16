@@ -1,30 +1,34 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const habitSchema = new mongoose.Schema(
-{
-  name:{
-    type:String,
-    required:true
-  },
+  {
+    name: {
+      type: String,
+      required: true,
+    },
 
-  description:{
-    type:String
-  },
+    description: {
+      type: String,
+    },
 
-  category:{
-    type:String,
-    default:"General"
-  },
+    category: {
+      type: String,
+      default: "General",
+    },
 
-  completedDates:[
-    {
-      type:String
-    }
-  ]
-},
-{
-  timestamps:true
-}
+    completedDates: [
+      {
+        type: String,
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
 );
 
-module.exports = mongoose.model("Habit",habitSchema);
+const Habit =
+  mongoose.models.Habit ||
+  mongoose.model("Habit", habitSchema);
+
+export default Habit;
