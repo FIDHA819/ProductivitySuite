@@ -1,4 +1,4 @@
-import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2, BookDown, QrCode, Clock, Contact2 ,Calendar,BookOpen} from "lucide-react";
+import { CheckSquare, Calculator, Wallet, Target, LayoutGrid, Link2, BookDown, QrCode, Clock, Contact2 ,Calendar,BookOpen,Weight} from "lucide-react";
 
 function Dashboard({ 
   openTodo, 
@@ -9,9 +9,10 @@ function Dashboard({
   openInvoice, 
   openQRCodeGenerator, 
   openPromodoroTimer,
-  openContact, // Added Callback
-  openAgeCalculator, // Added Callback
-  openStudentResult // Added Callback
+  openContact,
+  openAgeCalculator, 
+  openStudentResult, 
+  openBMICalculator 
 }) {
   const apps = [
     {
@@ -79,7 +80,7 @@ function Dashboard({
       bgGlow: "from-rose-600/20 to-transparent",
     },
     {
-      name: "Contact Manager", // Newly injected item
+      name: "Contact Manager", 
       desc: "Audit and organize network personnel profiles",
       icon: <Contact2 size={28} className="text-blue-400" />,
       action: openContact,
@@ -87,7 +88,7 @@ function Dashboard({
       bgGlow: "from-blue-600/20 to-transparent",
     },
      {
-      name: "Age Calculator", // Newly injected item
+      name: "Age Calculator", 
       desc: "Calculate age based on birth date",
       icon: <Calendar size={28} className="text-green-400" />,
       action: openAgeCalculator,
@@ -95,12 +96,20 @@ function Dashboard({
       bgGlow: "from-green-600/20 to-transparent",
     },
     {
-      name: "Student Result", // Newly injected item
+      name: "Student Result",
       desc: "Manage and view student academic performance",
       icon: <BookOpen size={28} className="text-amber-400" />,
       action: openStudentResult,
       accent: "hover:border-amber-500/50 hover:shadow-amber-950/20",
       bgGlow: "from-amber-600/20 to-transparent",
+    },
+    {
+      name: "BMI Calculator", 
+      desc: "Calculate Body Mass Index based on height and weight",
+      icon: <Weight size={28} className="text-blue-400" />,
+      action: openBMICalculator,
+      accent: "hover:border-blue-500/50 hover:shadow-blue-950/20",
+      bgGlow: "from-blue-600/20 to-transparent",
     },
   ];
 

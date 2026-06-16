@@ -11,6 +11,7 @@ import PromodoroTimer from "./apps/Promodoro/PromodoroPage";
 import ContactManager from "./apps/ContactManager/ContactPage";
 import AgeCalculator from "./apps/AgeCalculator/AgeCalculatorPage";
 import StudentResultPage from "./apps/StudentResult/StudentResultPage";
+import BMICalculator from "./apps/BMICalculator/BMICalculatorPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 
@@ -32,6 +33,7 @@ function App(){
     openContact={() => setPage("contactManager")} 
     openAgeCalculator={() => setPage("ageCalculator")}
     openStudentResult={() => setPage("studentResult")}
+      openBMICalculator={() => setPage("bmiCalculator")}
      />
 
   }
@@ -68,6 +70,9 @@ function App(){
 }
 {
   page==='studentResult'&&<StudentResultPage goBack={()=>setPage("dashboard")}/>
+}
+{
+  page==='bmiCalculator'&&<BMICalculator goBack={()=>setPage("dashboard")}/>
 }
     <ToastContainer
         position="top-right"
