@@ -1,5 +1,5 @@
-const express = require("express");
-const Expense = require("../Models/expense");
+import express from "express";
+import Expense from "../Models/expense.js";
 
 const router = express.Router();
 
@@ -53,4 +53,4 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
