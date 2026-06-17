@@ -4,7 +4,7 @@ import {
   getInvoices,
   deleteInvoice,
   updateInvoiceStatus,
-} from "../../services/invoiceService";
+} from "../../services/InvoiceService";
 import InvoiceForm from "./InvoiceForm";
 import InvoiceList from "./InvoiceList";
 

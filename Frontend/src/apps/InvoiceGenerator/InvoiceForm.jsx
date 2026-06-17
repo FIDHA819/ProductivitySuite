@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Calculator, Save, DollarSign, Percent } from "lucide-react";
 import {
   createInvoice,
-} from "../../services/invoiceService";
+} from "../../services/InvoiceService";
 function InvoiceForm({ onInvoiceCreated }) {
   const [invoiceNumber, setInvoiceNumber] = useState("");
   const [clientName, setClientName] = useState("");
